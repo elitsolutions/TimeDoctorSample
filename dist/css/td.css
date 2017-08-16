@@ -1,0 +1,124 @@
+body {
+    background-color: #f7f7f7;
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+}
+
+.group:after {
+  content: "";
+  display: table;
+  clear: both;
+}
+
+.editLayout:hover {
+    background-color:#f1f1f1;
+}
+
+.addWidget:hover {
+    background-color:rgb(91, 107, 125);
+}
+
+.addWidget::before {
+    content: "+";
+}
+
+.widgetEmpty {
+    color: #adc1cc;
+    border: 1px dashed #657fa8;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 31%;
+    height: 298px;
+    margin: 14px;
+    float: left;
+    border-radius: 5px;
+}
+
+.widgetEmpty:hover {
+    color: #8196a1;
+    border: 1px dashed #1e324a;
+    background-color: #f1f1f1;
+}
+
+.widgetNotEmptyEditable {
+    position: absolute;
+    z-index: 100;
+    height: inherit!important;
+}
+
+.overlay:target {
+  visibility: visible;
+  opacity: 1;
+}
+
+.popupClose:hover {
+    color: #06D85F;
+}
+
+.popupContentLeftColumnLi:first-of-type,
+.popupContentLeftColumnLi:hover {
+    background-color: #fff;
+}
+
+.popupContentRightColumnTr:hover {
+    background-color: #f5f5f5;
+}
+
+.popupContentRightColumnTd:last-of-type {
+    width: 20%;
+}
+
+.popupContentRightColumnButtonAddWidget:hover {
+    background-color:#5b6b7d;
+}
+
+.popupContentRightColumnButtonAddWidget::before {
+    content: "+";
+}
+
+.widgetNotEmptyHeaderDropdownContentLink:hover {
+    background: #657fa8;
+    color: #fff!important;
+}
+
+.widgetNotEmptyContentTableTr:hover {
+    background-color: #f5f5f5;
+}
+
+.saveButton {
+    background-image: url('../resources/savebutton-web-default.svg');
+    background-repeat: no-repeat;
+    height: 32px;
+    float: right;
+    width: 100px;
+}
+
+.saveButton:hover {
+    background-image: url('../resources/savebutton-web-hover.svg');
+}
+
+.saveButton:focus,
+.saveButton:active {
+    background-image: url('../resources/savebutton-web-selected.svg');
+}
+
+.cancelButton {
+    background-image: url('../resources/cancelbutton-web-default.svg');
+    background-repeat: no-repeat;
+    height: 32px;
+    float: right;
+    width: 100px;
+}
+
+.cancelButton:hover {
+    background-image: url('../resources/cancelbutton-web-hover.svg');
+}
+
+.cancelButton:focus,
+.cancelButton:active {
+    background-image: url('../resources/cancelbutton-web-selected.svg');
+}
+
+.dropHere::before {
+    content: "Drop Here";
+}

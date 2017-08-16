@@ -1,0 +1,324 @@
+body {
+    background-color: #f7f7f7;
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+}
+.group:after {
+  content: "";
+  display: table;
+  clear: both;
+}
+header {
+     padding: 15px; 
+}
+header .title {
+    color: #2c4159;
+    float: left;
+}
+header .editAddButtons {
+    float: right;
+}
+
+header .editAddButtons .button {
+    padding: 7px 12px;
+    margin: 0 5px;
+    border-radius: 3px;
+    border: 0;
+    font-size: 12px;
+    text-decoration: none;
+}
+
+header .editAddButtons .button:first-of-type {
+    background-color: #fff;
+    border: 1px solid #dadee6;
+    color: #5b6b7d;
+}
+
+header .editAddButtons .button:first-of-type:hover {
+    background-color:#f1f1f1;
+}
+
+header .editAddButtons .button:last-of-type {
+    background-color: #657fa8;
+    color: #fff;
+}
+
+header .editAddButtons .button:last-of-type:hover {
+    background-color:#5b6b7d;
+}
+
+header .editAddButtons .button:last-of-type::before {
+    content: "+";
+}
+
+main {
+    margin-top: 40px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+main .widget {
+    width: 31%;
+    height: 300px;
+    margin: 14px;
+    float: left;
+    border-radius: 5px;
+}
+
+main .widget.empty {
+    color: #adc1cc;
+    border: 1px dashed #657fa8;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+main .widget.empty:hover {
+    color: #8196a1;
+    border: 1px dashed #1e324a;
+    background-color: #f1f1f1;
+}
+
+main .widget.notEmpty {
+    background-color: white;
+    box-shadow: 1px 1px 0px 1px rgba(240,240,240,1);
+    color: #818d9c;
+}
+
+main .widget .header {
+    padding: 5px;
+    border-bottom: 1px solid #d8dde6;
+}
+
+main .widget .header .title {
+    font-size: 13px;
+    color: #33475e;
+    float: left;
+    padding: 9px;
+}
+
+main .widget .header .options {
+    float: right;
+    font-size: 12px;
+    position: relative;
+}
+
+main .widget .header .dropdown {
+    float: left;
+    display: flex;
+    align-items: center;
+}
+
+.dropdown-content {
+    display: none; 
+    position: absolute;
+    background-color: #f9f9f9;
+    min-width: 160px;
+    box-shadow: 1px 1px 0px 0px rgba(0,0,0,0.2);
+    border-radius: 3px;
+    padding: 5px;
+    left: -50px;
+    top: 8px;
+    z-index: 1;
+}
+
+.dropdown-content a {
+    display: block;
+    padding: 10px;
+    text-decoration: none;
+    color: #657fa8;
+}
+
+.dropdown-content a:hover {
+    background: #657fa8;
+    color: #fff;
+}
+
+main .widget .header .menu {
+    float: right;
+}
+
+main .widget .content {
+    font-size: 12px;
+    color: #3d5066;
+    padding: 5px;
+}
+
+main .widget .content table {
+    width: 100%;
+}
+
+main .widget .content table tr {
+    padding: 10px;
+}
+
+main .widget .content td:nth-child(1),
+main .widget .content td:nth-child(4) {
+    width: 10%;
+}
+
+main .widget .content td:nth-child(2),
+main .widget .content td:nth-child(3) {
+    width: 40%;
+}
+
+main .widget .content td:nth-child(4) {
+    font-weight: bold;
+}
+
+.overlay {
+    position: fixed;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    background: rgba(0, 0, 0, 0.3);
+    transition: opacity 500ms;
+    visibility: hidden;
+    opacity: 0;
+}
+.overlay:target {
+  visibility: visible;
+  opacity: 1;
+}
+
+.popup {
+  margin: 70px auto;
+  background: #f1f1f1;
+  border-radius: 5px;
+  width: 70%;
+  height: 70%;
+  position: relative;
+  transition: all 5s ease-in-out;
+  overflow: hidden;
+}
+
+.popup .header {
+    border-bottom: 1px solid #ccc;
+    padding: 15px 20px; 
+}
+
+.popup .header .title {
+    font-weight: bold;
+    color: #33475e;
+}
+
+.popup .close {
+  position: absolute;
+  top: 10px;
+  right: 15px;
+  transition: all 200ms;
+  font-size: 30px;
+  font-weight: bold;
+  text-decoration: none;
+  color: #333;
+}
+.popup .close:hover {
+  color: #06D85F;
+}
+.popup .content {
+  overflow: auto;
+  margin: 0 auto;
+}
+
+.popup .content .left-column {
+    width: 22%;
+    height: 100%;
+    float: left;
+    position: absolute;
+    background: #f1f1f1;
+    border-right: 1px solid #ccc;
+}
+
+.popup .content .left-column form {
+    padding: 10px;
+}
+
+.popup .content .left-column input {
+    width: 90%;
+    line-height: 20px;
+    padding: 5px 10px;
+    border-radius: 5px;
+    box-shadow: none;
+    font-size: 13px;
+    border: 1px solid #ccc;
+}
+
+.popup .content .left-column ul {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    font-size: 13px;
+}
+
+.popup .content .left-column ul li {
+    line-height: 30px;
+    margin-top: 2px;
+}
+
+.popup .content .left-column ul li a {
+    text-decoration: none;
+    color: #3d5066;
+}
+
+.popup .content .left-column ul li img {
+    float: left;
+}
+
+.popup .content .left-column ul li:first-of-type,
+.popup .content .left-column ul li:hover {
+    background-color: #fff;
+}
+
+.popup .content .right-column {
+    width: 76%; 
+    background-color: #fff;
+    float: right;
+    padding: 10px;
+    border-left: 1px solid #ccc;
+}
+
+.popup .content .right-column tr {
+    border-bottom: 1px solid #ccc;
+}
+
+.popup .content .right-column td {
+    padding: 5px;
+}
+
+.popup .content .right-column td h5 {
+    margin: 0;
+}
+
+.popup .content .right-column td span {
+    font-size: 11px;
+    color: #ccc;
+}
+
+.popup .content .right-column td p {
+    font-size: 12px;
+    margin: 5px 5px 5px 0;
+}
+
+.popup .content .right-column td:last-of-type {
+    width: 20%;
+}
+
+.popup .content .right-column .addWidget {
+    background-color: #657fa8;
+    color: #fff;
+    padding: 7px 12px;
+    margin: 0 5px;
+    border-radius: 3px;
+    border: 0;
+    font-size: 12px;
+    text-decoration: none;
+    width: 100%;
+}
+
+.popup .content .right-column .addWidget:hover {
+    background-color:#5b6b7d;
+}
+
+.popup .content .right-column .addWidget::before {
+    content: "+";
+}
